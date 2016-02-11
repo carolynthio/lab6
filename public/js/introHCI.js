@@ -28,20 +28,20 @@ function addProjectDetails(e) {
 
 	$.get("/project/" + idNumber, addProjectCallback);
 
-	$("#details" + projectID).html("foo");
+	//$("#details" + projectID).html("foo");
 
 	console.log("User clicked on project " + idNumber);
 }
 
 // empty call back function
 function addProjectCallback(result) {
-	
 	var projectHTML = '<a href ="#" class="thumbnail">' +
-	'<img src="' + result['image'] + '"class="detailsImage">' +
-	'<p>' +result['date'] + '</p>' +
-	'<p><small>' + result['summary'] + '</small></p></a>';
+	'<img src="' + result['image'] + '" class="detailsImage">' +
+	'<h1><small>' +result['date'] + '</small></h1>' +
+	'<p>' + result['summary'] + '</p></a>';
 
 	console.log(projectHTML);
+	$("#detailsproject" + result["id"]).html(projectHTML);
 }
 
 
